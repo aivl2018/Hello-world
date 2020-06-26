@@ -3,12 +3,12 @@ pipeline {
 	stages {
 		stage ('approval') {
 		steps { 
-		echo "User: ${username} said Ok."
+		sh 'pwd'
 			}	
 		}
 		stage ('deploy:prod') {
 		steps { 
-		echo "User: ${username} said Ok."
+		sh 'pwd'
 			}
 		}
 	}
