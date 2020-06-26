@@ -12,10 +12,7 @@ pipeline {
         stage('Test'){
           steps {   
         sshagent(['dev_server']) {
-            sh '''
-            ssh -o StrickHostKeyChecking=no ubuntu@172.31.45.184
-            touch text.abc            
-            '''
+            sh 'ssh -o StrickHostKeyChecking=no ubuntu@172.31.45.184 uptime'    
         }
           }
         }
