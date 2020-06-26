@@ -1,14 +1,24 @@
-node {
-    stage('Build') {
-        sh 'make'
+pipeline {
+    agent any
+    options {
+        skipStagesAfterUnstable()
     }
-    stage('Test') {
-        sh 'make check'
-        junit 'reports/**/*.xml'
-    }
-    if (currentBuild.currentResult == 'SUCCESS') {
+    stages {
+        stage('Build') {
+            steps {
+                sh 'make'
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'make check'
+                junit 'reports/**/*.xml'
+            }
+        }
         stage('Deploy') {
-            sh 'make publish'
+            steps {
+                sh 'make publish'
+            }
         }
     }
 }
