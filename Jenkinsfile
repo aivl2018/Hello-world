@@ -11,7 +11,10 @@ pipeline {
         }
         stage('Test'){
             steps {
+              sshagent(['172.31.45.184']) {
                 sh 'pwd'
+                sh 'hostname -i'
+            }
             }
         }
         stage('Deploy') {
