@@ -2,14 +2,10 @@ pipeline {
 	agent any
 	stages {
 		stage ('approval') {
-		steps { 
-		sh 'pwd'
-			}	
+		echo 'Deployment to Development is successful' 	
 		}
 		stage ('deploy:prod') {
-		steps { 
-		sh 'pwd'
-			}
+		echo 'Deployment to Development is successful' 
 		}
 	}
 }
