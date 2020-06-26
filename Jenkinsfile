@@ -11,9 +11,11 @@ pipeline {
         }
         stage('Test'){
           steps {   
-        def a = 'echo bhushan > bhushan'
         sshagent(['dev_server']) {
-            sh 'ssh -o StrickHostKeyChecking=no ubuntu@172.31.45.184 ${a}'
+            sh '''
+            ssh -o StrickHostKeyChecking=no ubuntu@172.31.45.184:/
+            touch text.abc            
+            '''
         }
           }
         }
