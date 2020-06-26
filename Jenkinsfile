@@ -2,22 +2,13 @@ pipeline {
 	agent any
 	stages {
 		stage ('build') {
-			...
+			sh 'pwd'
 		}
 		stage ('test: integration-&-quality') {
-			...
-		}
-		stage ('test: functional') {
-			...
-		}
-		stage ('test: load-&-security') {
-			...
-		}
-		stage ('approval') {
-			...
+			sh 'pwd'
 		}
 		stage ('deploy:prod') {
-			...
+			sh 'pwd'
 		}
 	}
 }
