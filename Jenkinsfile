@@ -13,10 +13,8 @@ pipeline {
           steps {   
         sshagent(['dev_server1']) {
             sh '''
-            ssh -o StrictHostKeyChecking=no ubuntu@72.31.45.184 
-            bash /home/ubuntu/bac.sh
-            '''
-            
+            ssh -o StrictHostKeyChecking=no ubuntu@72.31.45.184 'cd /home/ubuntu; bash bac.sh'
+            '''           
         }
           }
         }
