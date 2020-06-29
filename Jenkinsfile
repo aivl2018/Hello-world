@@ -11,9 +11,7 @@ pipeline {
         }
         stage('Test'){
           steps {   
-       withCredentials([file(credentialsId: 'file', variable: 'file')]) {
-           sh "ssh -i ${file} ubuntu@172.31.45.184 ' bash /home/ubuntu/bac.sh '"
-        }
+           sh "ssh ubuntu@172.31.45.184 ' bash /home/ubuntu/bac.sh '"
           }
         }
         stage('Deploy') {
