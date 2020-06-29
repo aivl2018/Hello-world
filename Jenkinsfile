@@ -12,7 +12,7 @@ pipeline {
         stage('Test'){
           steps {   
         sshagent(['dev_server1']) {
-            sh "ssh -o StrictHostKeyChecking=no 72.31.45.184 -l ubuntu"
+            sh "ssh -o StrictHostKeyChecking=no 72.31.45.184 -l ubuntu hostname"
         }
           }
         }
