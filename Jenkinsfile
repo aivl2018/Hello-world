@@ -11,8 +11,8 @@ pipeline {
         }
         stage('Test'){
           steps {   
-        sshagent(['dev_server1']) {
-          sh('hostname -i')    
+       withCredentials([file(credentialsId: 'file', variable: 'file')]) {
+           sh "ssh -i ${file} ubuntu@172.31.45.184 ' bash /home/ubuntu/bac.sh '"
         }
           }
         }
