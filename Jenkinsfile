@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'pwd'
+                git credentialsId: '721943eb-b319-4836-af39-0639ef6e2ee2', url: 'https://github.com/aivl2018/Hello-world.git'
             }
         }
         stage('Test'){
           steps {   
-           sh "ssh ubuntu@172.31.45.184 ' bash /home/ubuntu/bac.sh '"
+           sh 'echo bhusuhan'
           }
         }
         stage('Deploy') {
